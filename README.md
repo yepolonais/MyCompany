@@ -1,20 +1,20 @@
 # MyCompany
 
-A short live coding test for intermediate .NET developers. 
-The duration should not exceed 45 min.
+A short live coding test for intermediate .NET developers.  
+The expected duration is around **45 minutes**.
 
 # Objectives
 
-The goal of this application is to create a small REST API that allow to:
+The goal is to create a small REST API that allows you to:
 
-- create a client
-- create a command for a client
-- get all the commands from a client
+- Create a client
+- Create a command for a client
+- Retrieve all commands of a client
 
 
 # Models
 
-Here are the models that must be used : 
+The following models **must be used**: 
 
 ```csharp
 
@@ -43,25 +43,28 @@ public class LigneCommande
 
 # Tasks
 
-The candidate must create the following endpoints:
+You must implement the following endpoints:
 
-- POST /clients ? Create a client.
-- POST /clients/{id}/commands ? Create a command for a client
-- GET /clients/{id}/commands ? Return the client command
+- POST /clients ? Create a client
+- POST /clients/{id}/commands ? Create a command for a specific client
+- GET /clients/{id}/commands ? Return all commands for a specific client
 
-The candidate must used:
+You are expected to:
 
-- InMemory database
-- DTOs (ex. CreateClientRequest, CreateCommandeRequest).
-- DI 
-- Async
-
-
+- Use an in-memory database (just a List<T>)
+- Use DTOs for input (e.g. CreateClientRequest, CreateCommandeRequest)
+- Apply Dependency Injection
+- Use async/await, even if it seems unnecessary for in-memory storage
 
 # Bonus
 
-Add a method in the command service that calculate the total amount for a list of command.
-Use TDD with xunit to test the limit cases.
+Add a method in your command service to calculate the total amount for a given list of commands.
+
+Use TDD with xUnit to test edge cases, such as:
+
+- Empty command list
+- Products with zero quantity
+- Multiple products with various prices
 
 
 
